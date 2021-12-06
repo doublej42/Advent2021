@@ -1,7 +1,7 @@
-﻿const string inputFileName = @"App_Data\input.txt";
+﻿//TODO : Add Comments
+const string inputFileName = @"App_Data\input.txt";
 
 var inputFile = File.OpenText(inputFileName);
-
 var line = inputFile.ReadLine();
 var increases = 0;
 long currentValue = long.MaxValue;
@@ -15,7 +15,6 @@ try
         {
             increases++;
         }
-        //Console.WriteLine(line);
         line = inputFile.ReadLine();
     }
 }
