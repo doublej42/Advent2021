@@ -2,24 +2,29 @@
 const string inputFileName = @"App_Data\input.txt";
 
 var inputFile = File.OpenText(inputFileName);
-var line = inputFile.ReadLine();
-var increases = 0;
-long currentValue = long.MaxValue;
-try
+string? line;
+var values = new List<long>();
+while ((line = inputFile.ReadLine()) != null)
 {
-    while (line != null)
+    try
     {
-        var lastValue = currentValue;
-        currentValue = long.Parse(line);
-        if (currentValue > lastValue)
-        {
-            increases++;
-        }
-        line = inputFile.ReadLine();
+        values.Add(long.Parse(line));
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.ToString());
     }
 }
-catch (Exception ex)
+
+var increases = 0;
+long lastValue = long.MaxValue;
+foreach(var currentValue in values)
 {
-    Console.WriteLine(ex.ToString());
+    if (currentValue > lastValue)
+    {
+        increases++;
+    }
+    lastValue = currentValue;
 }
+
 Console.WriteLine(increases);
