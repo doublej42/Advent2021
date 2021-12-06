@@ -7,4 +7,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="App_Data\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="App_Data\input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
