@@ -71,7 +71,7 @@ void Day2()
             default: throw new ArgumentOutOfRangeException(nameof(splitValue));
         }
     }
-    Console.WriteLine($"Postion: {possition} multiplied: {possition.x*possition.y}");
+    Console.WriteLine($"Postion: {possition} multiplied: {possition.x * possition.y}");
     //now part 2
     var possition2 = new Possition();
     foreach (var value in values)
@@ -94,8 +94,15 @@ void Day2()
         }
     }
     Console.WriteLine($"Beter Postion: {possition2} multiplied: {possition2.x * possition2.y}");
+}
+
+Day3();
+void Day3()
+{
 
 }
 
 public record struct Possition(int x = 0, int y = 0, int aim = 0);
+
+
 
