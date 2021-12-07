@@ -8,11 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="App_Data\input.txt" />
+    <None Remove="App_Data\input1.txt" />
+    <None Remove="App_Data\input2.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="App_Data\input.txt">
+    <Content Include="App_Data\input1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\input2.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
