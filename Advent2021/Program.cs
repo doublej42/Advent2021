@@ -99,7 +99,17 @@ void Day2()
 Day3();
 void Day3()
 {
-
+    const string inputFileName = @"App_Data\input3.txt";
+    //read all lines, Yes I forgot where they hid this function in day 1.
+    var values = File.ReadAllLines(inputFileName);
+    var gamma = 0;
+    for(var i = values[0].Length-1; i >= 0; i--)
+    {
+        var numberOfOnes = values.Select(v => v.Substring(i,1)).Count(v => v == "1");
+        gamma += (numberOfOnes >= (values.Length / 2) ? Convert.ToInt32(Math.Pow(2, values[0].Length - i - 1)) : 0);
+    }
+    var epsilon = gamma ^ (Convert.ToInt32(Math.Pow(2, values[0].Length) - 1));
+    Console.WriteLine($"Gamma: {gamma} Epsilon: {epsilon}, muli: {gamma * epsilon}");
 }
 
 public record struct Possition(int x = 0, int y = 0, int aim = 0);
